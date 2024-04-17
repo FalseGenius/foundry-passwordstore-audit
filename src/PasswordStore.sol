@@ -10,8 +10,18 @@ pragma solidity 0.8.18; // q is this the correct compiler version?
 contract PasswordStore {
     error PasswordStore__NotOwner();
 
+
+    /*/////////////////////////////////////////////////
+                    STATE VARIABLES
+    /////////////////////////////////////////////////*/
+
     address private s_owner;
     string private s_password;
+    
+
+    /*/////////////////////////////////////////////////
+                        EVENTS
+    /////////////////////////////////////////////////*/
 
     event SetNetPassword();
 

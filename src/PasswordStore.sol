@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
+pragma solidity 0.8.18; // q is this the correct compiler version?
 
 /*
  * @author not-so-secure-dev

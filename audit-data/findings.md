@@ -87,7 +87,7 @@ myPassword
     if (msg.sender != s_owner) revert PasswordStore__NotOwner();
 ```
 
-### [L-01] `PasswordStore::getPassword()` natspec indicates a newPassword parameter, causing the natspec to be incorrect.
+### [I-01] `PasswordStore::getPassword()` natspec indicates a newPassword parameter, causing the natspec to be incorrect.
 
 **Description:** The function `PasswordStore::getPassword()` signature is `getPassword()` while natspec states that it should be 
 `getPassword(string)`.

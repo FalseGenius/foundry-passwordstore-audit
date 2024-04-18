@@ -42,11 +42,11 @@ Lead Auditors:
 - [Executive Summary](#executive-summary)
   - [Issues found](#issues-found)
 - [Findings](#findings)
-- [High](#high)
-- [Medium](#medium)
-- [Low](#low)
-- [Informational](#informational)
-- [Gas](#gas)
+  - [High](#high)
+  - [Medium](#medium)
+  - [Low](#low)
+  - [Informational](#informational)
+  - [Gas](#gas)
 
 # Protocol Summary
 
@@ -71,10 +71,13 @@ We use the [CodeHawks](https://docs.codehawks.com/hawks-auditors/how-to-evaluate
 ## Scope 
 ## Roles
 # Executive Summary
+*Add Notes about how the audit went, types of things you found etc.*
+*We spent X hours with Z auditors using Y tools etc*
+
 ## Issues found
 # Findings
-# High
-# Medium
-# Low 
-# Informational
-# Gas 
+## High
+## Medium
+## Low 
+## Informational
+## Gas 

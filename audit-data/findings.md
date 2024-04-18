@@ -1,4 +1,4 @@
-### [S-01] Storing password on chain makes it visible to anyone, regardless of the variable visibility. 
+### [H-01] Storing password on chain makes it visible to anyone, regardless of the variable visibility. 
 
 **Description:** All data stored on-chain is visible to anyone, and it can be read directly from the blockchain. The `PasswordStore::s_password` variable is intended to be a private variable, and only accessed through `PasswordStore::getPassword()` function, which is intended to be called by the owner of the contract.
 
@@ -45,7 +45,7 @@ myPassword
 
 
 
-### [H-01] `PasswordStore::setPassword()` has no access control. Non-owner can set the password.
+### [H-02] `PasswordStore::setPassword()` has no access control. Non-owner can set the password.
 
 **Description:** The function `PasswordStore::setPassword()` can be used by non-owner to set the password, breaking the functionality of the contract, as opposed to the natspec of the function that states, `This function allows only the owner to set a new password.`
 

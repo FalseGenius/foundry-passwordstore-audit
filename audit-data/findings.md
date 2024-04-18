@@ -41,6 +41,4 @@ and get output of,
 myPassword
 ```
 
-**Recommended Mitigation:** 
-
-<!-- 0x5FbDB2315678afecb367f032d93F642f64180aa3 -->
+**Recommended Mitigation:** Due to this, the overall architecture of the contract should be rethought. One could encrypt the password before storing it on the chain. This would require user to remember another password to decrypt the password. However, you'd also likely want to remove the view function as you wouldn't want user to accidently trigger a transaction with the password that decrypts it.

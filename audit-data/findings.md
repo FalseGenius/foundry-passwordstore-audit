@@ -1,4 +1,4 @@
-### [S-#] S-01 Storing password on chain makes it visible to anyone, regardless of the variable visibility. 
+### [S-01] Storing password on chain makes it visible to anyone, regardless of the variable visibility. 
 
 **Description:** All data stored on-chain is visible to anyone, and it can be read directly from the blockchain. The `PasswordStore::s_password` variable is intended to be a private variable, and only accessed through `PasswordStore::getPassword()` function, which is intended to be called by the owner of the contract.
 
@@ -42,3 +42,19 @@ myPassword
 ```
 
 **Recommended Mitigation:** Due to this, the overall architecture of the contract should be rethought. One could encrypt the password before storing it on the chain. This would require user to remember another password to decrypt the password. However, you'd also likely want to remove the view function as you wouldn't want user to accidently trigger a transaction with the password that decrypts it.
+
+
+
+### [H-01] `PasswordStore::setPassword()` has no access control. Non-owner can set the password.
+
+**Description:** The function `PasswordStore::setPassword()` can be used by non-owner to set the password, breaking the functionality of the contract, as opposed to the natspec of the function that states, `This function allows only the owner to set a new password.`
+
+```javascript
+    function setPassword(string memory newPassword) external {
+        // @audit No access control checks here
+        s_password = newPassword;
+        emit SetNetPassword();
+    }
+```
+
+**Impact:**

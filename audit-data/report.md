@@ -3,7 +3,7 @@ title: Protocol Audit Report
 author: FalseGenius
 date: March 18, 2024
 header-includes:
-  - \usepackage{titling}
+#   - \usepackage{titling}x
   - \usepackage{graphicx}
 ---
 
@@ -47,7 +47,6 @@ Lead Auditors:
     - [\[H-02\] `PasswordStore::setPassword()` has no access control. Non-owner can set the password.](#h-02-passwordstoresetpassword-has-no-access-control-non-owner-can-set-the-password)
   - [Informational](#informational)
     - [\[I-01\] `PasswordStore::getPassword()` natspec indicates a newPassword parameter, causing the natspec to be incorrect.](#i-01-passwordstoregetpassword-natspec-indicates-a-newpassword-parameter-causing-the-natspec-to-be-incorrect)
-  - [Gas](#gas)
 
 # Protocol Summary
 
@@ -219,5 +218,3 @@ myPassword
      */
     function getPassword() external view returns (string memory) {}
 ```
-
-## Gas 

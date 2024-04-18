@@ -6,7 +6,7 @@ We show one such method of reading any data off the chain below.
 
 **Impact:** Attackers can steal the password by reading it directly from the blockchain, severely breaking functionality of the contract.
 
-**Proof of Concept:** (Proof of Concept)
+**Proof of Concept:** 
 
 The below test case shows how anyone can read password directly off the blockchain
 
@@ -51,10 +51,39 @@ myPassword
 
 ```javascript
     function setPassword(string memory newPassword) external {
-        // @audit No access control checks here
+ @>     // @audit No access control checks here
         s_password = newPassword;
         emit SetNetPassword();
     }
 ```
 
-**Impact:**
+**Impact:** Anyone can set/change password,severely breaking the intended functionality of the contract.
+
+**Proof of Concept:** Add the following to `PasswordStore.t.sol` test file.
+
+<details>
+<summary>Code</summary>
+
+```javascript
+    function testNonOwnerCanChangePassword(address randomAddress) public {
+        vm.startPrank(randomAddress);
+        string memory newPassword = "password2";
+        passwordStore.setPassword(newPassword);
+        vm.stopPrank();
+
+        vm.prank(owner);
+        string memory actualPassword = passwordStore.getPassword();
+
+        // @audit Assert passes
+        assertEq(actualPassword, newPassword);
+    }
+```
+
+</details>
+
+**Recommended Mitigation:** Add Access control conditional to that `PasswordStore::setPassword()` function.
+
+```javascript
+    if (msg.sender != s_owner) revert PasswordStore__NotOwner();
+```
+

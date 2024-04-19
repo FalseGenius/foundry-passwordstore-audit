@@ -34,7 +34,6 @@ Lead Auditors:
 # Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Protocol Summary](#protocol-summary)
-- [Disclaimer](#disclaimer)
 - [Risk Classification](#risk-classification)
 - [Audit Details](#audit-details)
   - [Scope](#scope)
@@ -53,9 +52,6 @@ Lead Auditors:
 PasswordStore is a protocol dedicated to storage and retrival of a user's passwords. The protocol is designed to be used
 by a single user. Only the owner should be able to set and access this password.
 
-# Disclaimer
-
-The YOUR_NAME_HERE team makes all effort to find as many vulnerabilities in the code in the given time period, but holds no responsibilities for the findings provided in this document. A security audit by the team is not an endorsement of the underlying business or product. The audit was time-boxed and the review of the code was solely on the security aspects of the Solidity implementation of the contracts.
 
 # Risk Classification
 

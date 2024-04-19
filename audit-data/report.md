@@ -1,9 +1,9 @@
 ---
-title: Protocol Audit Report
+title: PasswordShare Protocol Audit Report
 author: FalseGenius
-date: March 18, 2024
+date: April 19, 2024
 header-includes:
-#   - \usepackage{titling}x
+  - \usepackage{titling}
   - \usepackage{graphicx}
 ---
 
@@ -14,11 +14,11 @@ header-includes:
         \includegraphics[width=0.5\textwidth]{logo.pdf} 
     \end{figure}
     \vspace*{2cm}
-    {\Huge\bfseries Protocol Audit Report\par}
+    {\Huge\bfseries PasswordShare Protocol Audit Report\par}
     \vspace{1cm}
     {\Large Version 1.0\par}
     \vspace{2cm}
-    {\Large\itshape Cyfrin.io\par}
+    {\Large\itshape FalseGenius\par}
     \vfill
     {\large \today\par}
 \end{titlepage}
